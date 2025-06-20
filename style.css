@@ -1,0 +1,425 @@
+/* Estilos generales */
+body {
+    font-family: "Times New Roman", serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    /* Base para rem y em */
+    font-size: 100%; /* 1rem = 16px por defecto en la mayoría de los navegadores */
+}
+
+.contenedor {
+    max-width: 1200px; /* Ancho máximo en pantallas grandes */
+    margin: 0 auto;
+    padding: 1.25rem; /* Equivalente a 20px */
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #e2adce;
+    color: #fff;
+    padding: 1rem; /* Equivalente a 16px */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si la pantalla es pequeña */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 1.25rem; /* Equivalente a 20px */
+}
+
+header .logo img {
+    margin-right: 0.9375rem; /* Equivalente a 15px */
+    max-width: 180px; /* Ancho máximo para la imagen */
+    height: auto; /* Mantiene la proporción */
+    width: 100%; /* Ocupa el ancho disponible hasta el max-width */
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.8rem; /* Relativo al tamaño de fuente base */
+    text-align: center;
+    flex-grow: 1; /* Permite que el título crezca para ocupar espacio */
+}
+
+/* Estilos de la navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex; /* Para controlar la distribución en pantallas grandes */
+    justify-content: center;
+    flex-wrap: wrap; /* Para que los elementos de navegación se envuelvan si es necesario */
+}
+
+nav ul li {
+    display: inline-block; /* O inline para elementos que se apilan horizontalmente */
+    margin: 0 0.9375rem; /* Equivalente a 15px */
+    font-size: 1.125rem; /* Equivalente a 18px, relativo al tamaño de fuente base */
+    font-family: "Times New Roman", serif;
+}
+
+nav ul li a {
+    background-color: #803463;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8em 1.5em; /* Relativo al tamaño de fuente del elemento li */
+    border-radius: 0.5rem; /* Equivalente a 8px */
+    transition: background-color 0.3s ease;
+    font-size: 1em; /* Ya relativo a su padre li */
+    white-space: nowrap; /* Evita que los enlaces se rompan en múltiples líneas */
+    margin-bottom: 0.5rem; /* Espacio entre los botones en pantallas pequeñas */
+}
+
+nav ul li a:hover {
+    background-color: #5a2440;
+}
+
+/* Oculta el botón en escritorio */
+.menu-toggle {
+    display: none; /* Por defecto oculto en escritorio */
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem; /* Relativo al tamaño de fuente base */
+    color: #fff;
+    cursor: pointer;
+    margin-right: 1.25rem; /* Equivalente a 20px */
+}
+
+/* Estilos del contenido principal */
+main {
+    padding: 1.25rem; /* Equivalente a 20px */
+}
+
+.imagen-mapa {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.25rem; /* Equivalente a 20px */
+    flex-wrap: wrap;
+}
+
+.imagen-mapa img,
+.imagen-mapa iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem; /* Equivalente a 8px */
+    padding-bottom: 0.9375rem; /* Equivalente a 15px */
+}
+
+/* Secciones */
+section {
+    background-color: #fff;
+    padding: 1.25rem; /* Equivalente a 20px */
+    margin-bottom: 1.25rem; /* Equivalente a 20px */
+    border-radius: 0.5rem; /* Equivalente a 8px */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Equivalente a 0 2px 4px */
+}
+
+section h2,
+section h3 {
+    color: #000080;
+    margin-top: 0;
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Escalado fluido entre 1.8rem y 2.5rem, usando 5vw como factor */
+    font-family: "Lucida Handwriting", cursive;
+}
+
+section p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Escalado fluido entre 1rem y 1.25rem, usando 2.5vw como factor */
+    font-family: "Times New Roman", serif;
+    text-align: justify;
+}
+
+#historia {
+    background-color: #f8c0da;
+    padding: 1.25rem; /* Equivalente a 20px */
+    margin-bottom: 1.25rem; /* Equivalente a 20px */
+    border-radius: 0.5rem; /* Equivalente a 8px */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Equivalente a 0 2px 4px */
+
+}
+/* Inicio */
+#inicio {
+    text-align: center;
+    padding: 2.5rem 1.25rem; /* Equivalente a 40px 20px */
+}
+
+#inicio h2 {
+    color: #803463;
+}
+
+#noticias h3 {
+    font-size: 1.75rem; /* Equivalente a 28px */
+    color: #333;
+    margin-bottom: 0.625rem; /* Equivalente a 10px */
+    text-align: center;
+}
+
+#noticias ul {
+    list-style: none;
+    padding: 0;
+}
+
+#noticias ul li {
+    padding: 0.5rem 0; /* Equivalente a 8px */
+    border-bottom: 1px solid #eee; /* Se mantiene en px por ser un borde fino */
+}
+
+#noticias ul li:last-child {
+    border-bottom: none;
+}
+
+#noticias ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-family: "Times New Roman", serif;
+    transition: color 0.3s ease;
+}
+
+#noticias ul li a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Botones */
+.boton {
+    display: inline-block;
+    background-color: #803463;
+    color: #fff;
+    padding: 0.8em 1.5em; /* Relativo al tamaño de fuente del botón */
+    text-decoration: none;
+    border-radius: 0.5rem; /* Equivalente a 8px */
+    transition: background-color 0.3s ease;
+    font-size: 1rem; /* Relativo al tamaño de fuente base */
+}
+
+.boton:hover {
+    background-color: #e2adce;
+}
+
+/* Pie de página */
+footer {
+    background-color: #e2adce;
+    color: #000;
+    text-align: center;
+    padding: 1em 0; /* Relativo al tamaño de fuente del footer */
+    font-size: 0.9em; /* Relativo al tamaño de fuente base del body */
+}
+
+footer p {
+    font-size: 1rem; /* Relativo al tamaño de fuente base */
+}
+
+/* Video portada */
+.video-portada {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 (altura / ancho = 9 / 16 = 0.5625) */
+    height: 0; /* Necesario para que padding-bottom funcione como altura */
+    overflow: hidden;
+    margin-bottom: 1.25rem; /* Equivalente a 20px */
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+.video-portada iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Elimina el borde predeterminado del iframe */
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.dots-loader {
+    display: flex;
+    gap: 0.5rem; /* Equivalente a 8px */
+}
+
+.dots-loader span {
+    width: 0.75rem; /* Equivalente a 12px */
+    height: 0.75rem; /* Equivalente a 12px */
+    background: #3498db;
+    border-radius: 50%;
+    animation: bounce 1.2s infinite alternate;
+}
+
+.dots-loader span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.dots-loader span:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+/* --- Media Queries para responsividad --- */
+
+/* Teléfonos y pantallas pequeñas (Mobile First) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Apila el logo y la navegación verticalmente */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+        padding: 1rem;
+    }
+
+    header .logo {
+        width: 100%; /* El logo ocupa todo el ancho */
+        justify-content: space-between; /* Alinea el logo y el botón de menú */
+        margin-left: 0;
+        padding-bottom: 0.5rem;
+    }
+
+    header .logo img {
+        max-width: 150px; /* Un poco más pequeña en móviles */
+        margin-right: 0.5rem;
+    }
+
+    header .logo h1 {
+        font-size: 1.5rem; /* Más pequeño en móviles */
+    }
+
+    /* Mostrar el botón de menú en pantallas pequeñas */
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        width: 100%;
+        display: none; /* Oculta la navegación por defecto en móvil */
+        text-align: left;
+        background-color: #803463; /* Color de fondo para el menú desplegado */
+        padding-top: 1rem;
+    }
+
+    nav.active { /* Clase para mostrar el menú con JavaScript */
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column; /* Apila los elementos de navegación */
+        align-items: flex-start; /* Alinea los enlaces a la izquierda */
+    }
+
+    nav ul li {
+        display: block; /* Cada enlace en su propia línea */
+        margin: 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block; /* Los enlaces ocupan todo el ancho */
+        padding: 0.8rem 1.25rem; /* Ajuste de padding */
+        border-radius: 0; /* Sin bordes redondeados para un menú vertical */
+        margin-bottom: 0.1rem; /* Pequeño espacio entre los elementos del menú */
+    }
+
+    .contenedor {
+        padding: 1rem; /* Menos padding en pantallas pequeñas */
+    }
+
+    section {
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    section h2,
+    section h3 {
+        font-size: clamp(1.5rem, 6vw, 2.2rem); /* Rango más ajustado para móviles */
+        text-align: center;
+    }
+
+    section p {
+        font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+    }
+
+    #inicio {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Tabletas y pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header .logo img {
+        max-width: 170px;
+    }
+
+    header .logo h1 {
+        font-size: 1.6rem;
+    }
+
+    nav ul li {
+        margin: 0 0.8rem;
+    }
+
+    section h2,
+    section h3 {
+        font-size: clamp(2rem, 4vw, 2.4rem);
+    }
+
+    section p {
+        font-size: clamp(1.1rem, 2vw, 1.2rem);
+    }
+}
+
+/* Animación del loader (se mantiene igual) */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Animación: tres puntos saltando */
+.dots-loader {
+    display: flex;
+    gap: 0.5rem; /* Equivalente a 8px, del CSS 1 */
+}
+
+.dots-loader span {
+    width: 0.75rem; /* Equivalente a 12px, del CSS 1 */
+    height: 0.75rem; /* Equivalente a 12px, del CSS 1 */
+    background: #3498db;
+    border-radius: 50%;
+    animation: bounce 1.2s infinite alternate;
+}
+
+.dots-loader span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.dots-loader span:nth-child(3) {
+    animation-delay: 0.8s;
+}
+

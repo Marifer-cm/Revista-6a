@@ -1,0 +1,510 @@
+/* Estilos generales */
+body {
+    font-family: "Times New Roman", serif; /* Fuente Times New Roman con una alternativa serif */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Un fondo gris claro */
+    color: #333; /* Texto en color gris oscuro */
+    line-height: 1.6;
+    font-size: 100%; /* Base para rem (1rem = 16px por defecto) */
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenido en pantallas grandes */
+    padding: 1.25rem; /* Equivalente a 20px */
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #e2adce; /* Azul marino para el encabezado */
+    color: #FFFFFF; /* Texto blanco en el encabezado */
+    padding: 1em 1.25rem; /* 1em para el padding vertical, 1.25rem para el horizontal */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye espacio entre logo y nav */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si la pantalla es pequeña */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 1.25rem; /* Equivalente a 20px */
+}
+
+header .logo img {
+    max-height: 3.125rem; /* Equivalente a 50px, pero responsivo */
+    width: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 0.9375rem; /* Equivalente a 15px */
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.8rem; /* Relativo al tamaño de fuente base */
+    flex-shrink: 0; /* Evita que el título se encoja si no hay espacio */
+}
+
+/* Estilos de la navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex; /* Utiliza flexbox para alinear los elementos horizontalmente */
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+}
+
+nav ul li {
+    display: inline-block; /* Mejor para elementos que se apilan horizontalmente y tienen margen */
+    margin: 0 0.9375rem; /* Equivalente a 15px */
+    font-size: 1.125rem; /* Equivalente a 18px */
+    font-family: "Times New Roman", serif;
+}
+
+nav ul li a {
+    background-color: #803463; /* Naranja para los botones de navegación */
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 0.8em 1.5em; /* Relativo al tamaño de fuente del li, para espaciado interno */
+    border-radius: 0.5rem; /* Equivalente a 8px */
+    transition: background-color 0.3s ease;
+    font-size: 1em; /* Se mantiene relativo al tamaño de fuente de su padre (li) */
+    white-space: nowrap; /* Evita que el texto del botón se rompa en varias líneas */
+}
+
+nav ul li a:hover {
+    background-color: #5a2440; /* Un tono de naranja más oscuro al pasar el ratón */
+}
+
+/* Oculta el botón en escritorio */
+.menu-toggle {
+    display: none; /* Por defecto oculto en escritorio */
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem; /* Relativo al tamaño de fuente base */
+    color: #fff;
+    cursor: pointer;
+    margin-right: 1.25rem; /* Equivalente a 20px */
+}
+
+/* Estilos del contenido principal */
+main {
+    padding: 1.25rem; /* Equivalente a 20px */
+}
+
+section {
+    background-color: #FFFFFF; /* Fondo blanco para las secciones de contenido */
+    padding: 1.25rem; /* Equivalente a 20px */
+    margin-bottom: 1.25rem; /* Equivalente a 20px */
+    border-radius: 0.5rem; /* Equivalente a 8px */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Equivalente a 0 2px 4px */
+}
+
+section h2,
+section h3 {
+    color: #000080; /* Azul marino para los títulos de sección */
+    margin-top: 0;
+    font-size: clamp(1.6rem, 4vw, 2.2rem); /* Escalado fluido entre 1.6rem y 2.2rem, usando 4vw */
+    font-family: "Lucida Handwriting", cursive;
+    text-align: center; /* Centrar títulos de sección */
+}
+
+section p {
+    font-size: 1.1rem; /* Equivalente a 17.6px (1.1 * 16px) */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: justify;
+    /* Eliminados display, padding-left y position que causaban problemas de responsividad */
+    max-width: 800px; /* Limita el ancho del párrafo para mejor legibilidad */
+    margin: 0.5rem auto 1rem auto; /* Centra el párrafo y añade margen vertical */
+}
+
+/* Estilos específicos para la sección de inicio */
+#inicio {
+    text-align: center; /* Centra el contenido de la sección de inicio */
+    padding: 2.5rem 1.25rem; /* Equivalente a 40px 20px */
+}
+
+#inicio h2 {
+    font-size: clamp(2rem, 5vw, 2.5rem); /* Título principal más grande, escalado fluido */
+    color: #803463; /* Título principal en naranja */
+    margin-bottom: 0.9375rem; /* Equivalente a 15px */
+    font-family: Lucida Handwriting;
+}
+
+#inicio p {
+    font-size: 1.1rem; /* Párrafos ligeramente más grandes */
+    margin-bottom: 1.25rem; /* Equivalente a 20px */
+    text-align: justify;
+    max-width: 800px; /* Mismo que el párrafo general para consistencia */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#inicio .boton {
+    font-size: 1.2rem; /* Botón de inicio más grande */
+    padding: 1em 2em; /* Mayor espaciado interno del botón */
+}
+
+/* Estilos para la sección de noticias */
+#noticias h3 {
+    font-size: 1.4rem; /* Título de noticias un poco más grande */
+    color: #333; /* Color más oscuro para el título de noticias */
+    margin-bottom: 0.625rem; /* Equivalente a 10px */
+    text-align: center; /* Centra el título de noticias */
+}
+
+#noticias ul {
+    list-style: none;
+    padding: 0;
+}
+
+#noticias ul li {
+    padding: 0.5rem 0; /* Equivalente a 8px */
+    border-bottom: 1px solid #eee; /* Línea divisoria entre noticias */
+}
+
+#noticias ul li:last-child {
+    border-bottom: none; /* Elimina la línea inferior de la última noticia */
+}
+
+#noticias ul li a {
+    color: #007bff; /* Color azul para los enlaces de noticias */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#noticias ul li a:hover {
+    color: #0056b3; /* Color más oscuro al pasar el ratón */
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+.boton {
+    display: inline-block;
+    background-color: #803463; /* Naranja para el botón principal */
+    color: #FFFFFF;
+    padding: 0.8em 1.5em; /* Relativo al tamaño de fuente del botón */
+    text-decoration: none;
+    border-radius: 0.5rem; /* Equivalente a 8px */
+    transition: background-color 0.3s ease;
+    font-size: 1rem; /* Relativo al tamaño de fuente base */
+}
+
+.boton:hover {
+    background-color: #e2adce; /* Un tono de naranja más oscuro al pasar el ratón */
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #e2adce; /* Azul marino para el pie de página */
+    color: #000000;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    font-size: 0.9em; /* Ligeramente más pequeño */
+}
+
+footer p {
+    font-size: 0.9375rem; /* Equivalente a 15px */
+    margin: 0.5rem 0; /* Ajusta el margen para párrafos en el footer */
+}
+
+/* Estilo de la pantalla de carga */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Animación: tres puntos saltando */
+.dots-loader {
+    display: flex;
+    gap: 0.5rem; /* Equivalente a 8px */
+}
+
+.dots-loader span {
+    width: 0.75rem; /* Equivalente a 12px */
+    height: 0.75rem; /* Equivalente a 12px */
+    background: #3498db;
+    border-radius: 50%;
+    animation: bounce 1.2s infinite alternate;
+}
+
+.dots-loader span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.dots-loader span:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+@keyframes bounce {
+    to {
+        transform: translateY(-0.9375rem); /* Equivalente a -15px */
+        opacity: 0.5;
+    }
+}
+
+/* Diseño de imagenes */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto; /* Asegura que la altura se ajuste automáticamente */
+}
+
+.stack {
+    width: 100%; /* Se adapta al contenedor */
+    max-width: 300px; /* Mantiene un tamaño máximo fijo */
+    transition: 0.25s ease;
+    margin: 0 auto 1.25rem auto; /* Centra el stack y añade margen inferior */
+}
+
+.stack:hover {
+    transform: rotate(5deg);
+}
+
+.stack:hover .card:before {
+    transform: translatey(-2%) rotate(-4deg);
+}
+
+.stack:hover .card:after {
+    transform: translatey(2%) rotate(4deg);
+}
+
+.card {
+    aspect-ratio: 3 / 2;
+    border: 4px solid; /* Se mantiene en px para precisión del borde */
+    background-color: #fff;
+    position: relative;
+    transition: 0.15s ease;
+    cursor: pointer;
+    padding: 5% 5% 15% 5%; /* Porcentajes para el padding de la tarjeta */
+}
+
+.card:before,
+.card:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 4px solid; /* Se mantiene en px */
+    background-color: #fff;
+    transform-origin: center center;
+    z-index: -1;
+    transition: 0.15s ease;
+    top: 0;
+    left: 0;
+}
+
+.card:before {
+    transform: translatey(-2%) rotate(-6deg);
+}
+
+.card:after {
+    transform: translatey(2%) rotate(6deg);
+}
+
+.image {
+    width: 100%;
+    border: 4px solid; /* Se mantiene en px */
+    background-color: #eee;
+    aspect-ratio: 1 / 1;
+    position: relative;
+}
+
+.browser-warning {
+    margin-bottom: 4rem; /* Equivalente a 64px */
+}
+
+@supports (aspect-ratio: 1 / 1) {
+    .browser-warning {
+        display: none;
+    }
+}
+
+/* Diseño de contenedores redes sociales */
+.contenedor-botones {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 1.25rem; /* Equivalente a 20px */
+    flex-wrap: wrap; /* Permite que los botones se envuelvan a la siguiente línea */
+    margin-top: 1.25rem; /* Espacio superior */
+    margin-bottom: 2.5rem; /* Espacio inferior */
+    /* Eliminados padding-left, bottom y position para responsividad */
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem; /* Equivalente a 12px 24px */
+    border: none;
+    border-radius: 3.125rem; /* Equivalente a 50px */
+    font-size: 0.9375rem; /* Equivalente a 15px */
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.btn-instagram:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0.9375rem #dc2743; /* Equivalente a 15px */
+}
+
+.btn-email {
+    background-color: #0072c6;
+}
+
+.btn-email:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0.9375rem #0072c6; /* Equivalente a 15px */
+}
+
+.icono {
+    font-size: 1.25rem; /* Equivalente a 20px */
+    margin-right: 0.5rem; /* Espacio entre icono y texto */
+}
+
+/* --- Media Queries para responsividad --- */
+
+/* Teléfonos y pantallas pequeñas (Mobile First) */
+@media (max-width: 768px) {
+     header {
+        flex-direction: column; /* Apila el logo y la navegación verticalmente */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+        padding: 1rem;
+    }
+
+    header .logo {
+        width: 100%; /* El logo ocupa todo el ancho */
+        justify-content: space-between; /* Alinea el logo y el botón de menú */
+        margin-left: 0;
+        padding-bottom: 0.5rem;
+    }
+
+    header .logo img {
+        max-width: 150px; /* Un poco más pequeña en móviles */
+        margin-right: 0.5rem;
+    }
+
+    header .logo h1 {
+        font-size: 1.5rem; /* Más pequeño en móviles */
+    }
+
+    /* Mostrar el botón de menú en pantallas pequeñas */
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        width: 100%;
+        display: none; /* Oculta la navegación por defecto en móvil */
+        text-align: left;
+        background-color: #803463; /* Color de fondo para el menú desplegado */
+        padding-top: 1rem;
+    }
+
+    nav.active { /* Clase para mostrar el menú con JavaScript */
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column; /* Apila los elementos de navegación */
+        align-items: flex-start; /* Alinea los enlaces a la izquierda */
+    }
+
+    nav ul li {
+        display: block; /* Cada enlace en su propia línea */
+        margin: 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block; /* Los enlaces ocupan todo el ancho */
+        padding: 0.8rem 1.25rem; /* Ajuste de padding */
+        border-radius: 0; /* Sin bordes redondeados para un menú vertical */
+        margin-bottom: 0.1rem; /* Pequeño espacio entre los elementos del menú */
+    }
+    .contenedor {
+        padding: 1rem; /* Menos padding en pantallas pequeñas */
+    }
+
+    section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    section h2,
+    section h3 {
+        font-size: clamp(1.4rem, 6vw, 1.8rem); /* Rango más ajustado para móviles */
+        text-align: center;
+    }
+
+    section p {
+        font-size: 1rem; /* Párrafos más pequeños en móviles */
+        padding-left: 0; /* Elimina padding fijo en móviles */
+        text-align: left; /* Alineación normal en móviles */
+    }
+
+    #inicio {
+        padding: 2rem 1rem;
+    }
+
+    .contenedor-botones {
+        flex-direction: column; /* Apila los botones de redes sociales */
+        align-items: center; /* Centra los botones apilados */
+        gap: 0.8rem; /* Espacio reducido entre botones */
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        width: 80%; /* Los botones ocupan más ancho en móviles */
+        max-width: 250px; /* Para que no sean demasiado anchos */
+        justify-content: center; /* Centra el contenido del botón */
+    }
+}
+
+/* Tabletas y pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header .logo img {
+        max-width: 170px;
+    }
+
+    header .logo h1 {
+        font-size: 1.6rem;
+    }
+
+    nav ul li {
+        margin: 0 0.8rem;
+    }
+
+    section h2,
+    section h3 {
+        font-size: clamp(1.8rem, 3.5vw, 2.1rem);
+    }
+
+    section p {
+        font-size: 1.05rem;
+        padding-left: 1rem; /* Puedes ajustar este padding si es necesario para el layout */
+    }
+
+    .contenedor-botones {
+        gap: 1rem;
+    }
+}

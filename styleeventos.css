@@ -1,0 +1,438 @@
+/* --- Estilos Generales y Reseteo Básico --- */
+* {
+    box-sizing: border-box; /* Fundamental para el layout responsivo */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    font-size: 100%; /* Base para rem (16px por defecto) */
+}
+
+/* Contenedor principal para centrar el contenido (opcional, si lo usas en el HTML) */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+/* --- Estilos del Encabezado --- */
+header {
+    background-color: #e2adce;
+    color: #fff;
+    padding: 1rem 1.25rem; /* Padding horizontal para un mejor espaciado */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que los elementos salten de línea */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    /* margin-left se eliminará para que el padding del header lo controle */
+    width: auto;
+}
+
+header .logo img {
+    margin-right: 0.9375rem;
+    max-width: 180px;
+    width: 100%; /* Asegura que la imagen sea fluida hasta su max-width */
+    height: auto;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    text-align: left;
+    flex-grow: 1;
+}
+
+/* Botón de menú para móvil (OCULTO POR DEFECTO EN ESCRITORIO) */
+.menu-toggle {
+    display: none; /* Se mostrará con Media Query */
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    /* margin-right se eliminará para que el padding del header lo controle */
+}
+
+/* Estilos de la navegación */
+nav {
+    width: auto; /* Ancho automático para navegación en escritorio */
+    display: block; /* Muestra la navegación por defecto en escritorio */
+    background-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Alinea los ítems horizontalmente */
+    justify-content: center; /* Centra los enlaces */
+    flex-wrap: wrap; /* Permite que los enlaces se envuelvan si no caben */
+    gap: 0.9375rem; /* Espacio entre los elementos de la lista */
+}
+
+nav ul li {
+    font-size: 1.125rem;
+    font-family: "Times New Roman", serif;
+    width: auto;
+}
+
+nav ul li a {
+    background-color: #803463;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8em 1.5em;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    font-size: 1em; /* Relativo a su padre li */
+    white-space: nowrap; /* Evita que los enlaces se rompan en varias líneas */
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #5a2440;
+}
+
+/* --- Estilos del Contenido Principal (Main) --- */
+main {
+    padding: 1.25rem;
+    max-width: 1200px; /* Limita el ancho del contenido principal */
+    margin: 0 auto; /* Centra el main */
+}
+
+section {
+    background-color: #FFFFFF;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+section h2,
+section h3 {
+    color: #000080;
+    margin-top: 0;
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Escalado de fuente responsivo */
+    font-family: "Lucida Handwriting", cursive;
+    text-align: center;
+    margin-bottom: 1rem; /* Espacio debajo de los títulos */
+}
+
+section p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Escalado de fuente responsivo */
+    font-family: "Times New Roman", serif;
+    text-align: justify;
+    margin-bottom: 1em; /* Espacio debajo de los párrafos */
+}
+
+/* Estilos específicos para la sección de inicio */
+#inicio {
+    text-align: center;
+    padding: 2.5rem 1.25rem;
+}
+
+#inicio h2 {
+    color: #803463;
+    font-size: clamp(2rem, 6vw, 2.8rem); /* Un poco más grande para el título principal */
+}
+
+#inicio p {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+}
+
+/* Los estilos para .boton no se usan en el HTML proporcionado para eventos, si existen en otras páginas, mantenlos. */
+/* #inicio .boton {
+    font-size: 1rem;
+    padding: 0.8em 1.5em;
+} */
+
+/* --- Contenedor de Videos Responsivos (CLAVE) --- */
+/* Esta es la clase que envolverá a tus iframes en el HTML */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* Mantiene una relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%; /* Asegura que no se desborde */
+    margin: 20px auto; /* Centra el video y añade espacio */
+    background-color: #000; /* Fondo negro mientras carga o si no se ve el video */
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Eliminar .imagen-principal iframe si todos los iframes están envueltos en .video-responsive */
+/* .imagen-principal iframe {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+} */
+
+
+/* --- Estilos de las Galerías de Imágenes y Videos --- */
+.galeria,
+.galeria-2 {
+    display: grid; /* Usamos CSS Grid para flexibilidad de columnas */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Autoajuste, mínimo 280px */
+    gap: 15px; /* Espacio entre las imágenes */
+    margin-top: 20px;
+    justify-content: center; /* Centra los ítems si no llenan la fila completa */
+}
+
+.galeria img,
+.galeria-2 img {
+    width: 100%;
+    height: 250px; /* Altura fija para que todas las imágenes de la galería tengan el mismo alto */
+    object-fit: cover; /* Recorta la imagen para cubrir el área sin distorsión */
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    filter: brightness(80%);
+    transition: .7s ease;
+}
+
+.galeria img:hover,
+.galeria-2 img:hover {
+    transform: scale(1.05);
+    filter: brightness(130%);
+}
+
+/* Para las galerías que contienen videos */
+.galeria-video,
+.galeria1-video {
+    display: grid; /* También usamos Grid para los videos de galería */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas de videos */
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+/* Dentro de .galeria-video y .galeria1-video, cada iframe también debe estar en .video-responsive */
+/* El estilo .video-responsive ya manejará el tamaño y la relación de aspecto */
+
+
+/* --- Estilos del Pie de Página --- */
+footer {
+    background-color: #e2adce;
+    color: #000;
+    text-align: center;
+    padding: 1.5em 1.25rem; /* Aumenta el padding para un mejor espaciado en general */
+    margin-top: 2rem; /* Espacio superior para separar del contenido */
+    font-size: 0.9em;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0; /* Elimina márgenes por defecto del párrafo dentro del footer */
+}
+
+
+/* --- Estilo de la pantalla de carga (Loader) --- */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.dots-loader {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dots-loader span {
+    width: 0.75rem;
+    height: 0.75rem;
+    background: #3498db;
+    border-radius: 50%;
+    animation: bounce 1.2s infinite alternate;
+}
+
+.dots-loader span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.dots-loader span:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* --- Media Queries --- */
+
+/* Para pantallas más pequeñas que 992px (ej. laptops pequeñas, tablets en horizontal) */
+@media (max-width: 768px) {
+   header {
+        flex-direction: column; /* Apila el logo y la navegación verticalmente */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+        padding: 1rem;
+    }
+
+    header .logo {
+        width: 100%; /* El logo ocupa todo el ancho */
+        justify-content: space-between; /* Alinea el logo y el botón de menú */
+        margin-left: 0;
+        padding-bottom: 0.5rem;
+    }
+
+    header .logo img {
+        max-width: 150px; /* Un poco más pequeña en móviles */
+        margin-right: 0.5rem;
+    }
+
+    header .logo h1 {
+        font-size: 1.5rem; /* Más pequeño en móviles */
+    }
+
+    /* Mostrar el botón de menú en pantallas pequeñas */
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        width: 100%;
+        display: none; /* Oculta la navegación por defecto en móvil */
+        text-align: left;
+        background-color: #803463; /* Color de fondo para el menú desplegado */
+        padding-top: 1rem;
+    }
+
+    nav.active { /* Clase para mostrar el menú con JavaScript */
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column; /* Apila los elementos de navegación */
+        align-items: flex-start; /* Alinea los enlaces a la izquierda */
+    }
+
+    nav ul li {
+        display: block; /* Cada enlace en su propia línea */
+        margin: 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block; /* Los enlaces ocupan todo el ancho */
+        padding: 0.8rem 1.25rem; /* Ajuste de padding */
+        border-radius: 0; /* Sin bordes redondeados para un menú vertical */
+        margin-bottom: 0.1rem; /* Pequeño espacio entre los elementos del menú */
+    }
+
+    main {
+        padding: 1rem; /* Reduce el padding del contenido principal */
+    }
+
+    section {
+        padding: 1rem; /* Reduce el padding de las secciones */
+    }
+
+    .galeria, .galeria-2, .galeria-video, .galeria1-video {
+        grid-template-columns: 1fr; /* Una sola columna para todas las galerías en móvil */
+        gap: 10px;
+    }
+
+    .galeria img, .galeria-2 img {
+        height: 200px; /* Ajusta la altura de las imágenes de galería en móvil */
+    }
+
+    .video-responsive {
+        padding-bottom: 75%; /* Ajusta la relación de aspecto para ser un poco más "cuadrada" en móviles (4:3) o mantén 56.25% (16:9) si prefieres */
+        /* Puedes experimentar con este valor, 56.25% (16:9) es el más común. */
+    }
+}
+
+/* Para pantallas muy pequeñas (móviles antiguos, o resoluciones bajas) */
+@media (max-width: 480px) {
+    body {
+        font-size: 90%; /* Ajusta ligeramente el tamaño de fuente base */
+    }
+
+    header .logo img {
+        max-width: 120px;
+    }
+
+    header .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    section h2, section h3 {
+        font-size: clamp(1.5rem, 4.5vw, 2rem);
+    }
+
+    section p {
+        font-size: clamp(0.9rem, 2.8vw, 1.1rem);
+    }
+
+    footer {
+        padding: 1em 0.5rem;
+        font-size: 0.8em;
+    }
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Animación: tres puntos saltando */
+.dots-loader {
+    display: flex;
+    gap: 0.5rem; /* Equivalente a 8px, del CSS 1 */
+}
+
+.dots-loader span {
+    width: 0.75rem; /* Equivalente a 12px, del CSS 1 */
+    height: 0.75rem; /* Equivalente a 12px, del CSS 1 */
+    background: #3498db;
+    border-radius: 50%;
+    animation: bounce 1.2s infinite alternate;
+}
+
+.dots-loader span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.dots-loader span:nth-child(3) {
+    animation-delay: 0.8s;
+}

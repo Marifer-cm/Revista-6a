@@ -1,0 +1,552 @@
+/* Estilos generales */
+body {
+    font-family: "Times New Roman", serif; /* Fuente Times New Roman con una alternativa serif */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Un fondo gris claro */
+    color: #333; /* Texto en color gris oscuro */
+    line-height: 1.6;
+    font-size: 100%; /* 1rem = 16px por defecto en la mayoría de los navegadores, base para rem y em */
+}
+
+.contenedor {
+    max-width: 1200px; /* Ancho máximo en pantallas grandes */
+    margin: 0 auto; /* Centra el contenido en pantallas grandes */
+    padding: 1.25rem; /* Equivalente a 20px, un padding responsivo */
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #e2adce; /* Color del CSS 1 */
+    color: #fff; /* Color del CSS 1 */
+    padding: 1rem; /* Padding del CSS 1 */
+    display: flex; /* Flexbox del CSS 1 */
+    align-items: center; /* Flexbox del CSS 1 */
+    justify-content: space-between; /* Flexbox del CSS 1 */
+    flex-wrap: wrap; /* Flexbox del CSS 1 */
+}
+
+header .logo {
+    display: flex; /* Flexbox del CSS 1 */
+    align-items: center; /* Flexbox del CSS 1 */
+    margin-left: 1.25rem; /* Margen del CSS 1 */
+}
+
+header .logo img {
+    margin-right: 0.9375rem; /* Margen del CSS 1 */
+    max-width: 180px; /* Ancho del CSS 1 */
+    height: auto; /* Mantiene la proporción */
+    width: 100%; /* Ocupa el ancho disponible hasta el max-width */
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.8rem; /* Font-size del CSS 1 (relativo al tamaño de fuente base) */
+    text-align: center;
+    flex-grow: 1; /* Propiedad del CSS 1 */
+}
+
+/* Estilos de la navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex; /* Para controlar la distribución en pantallas grandes */
+    justify-content: center;
+    flex-wrap: wrap; /* Para que los elementos de navegación se envuelvan si es necesario */
+}
+
+nav ul li {
+    display: inline-block; /* O inline para elementos que se apilan horizontalmente */
+    margin: 0 0.9375rem; /* Equivalente a 15px */
+    font-size: 1.125rem; /* Equivalente a 18px, relativo al tamaño de fuente base */
+    font-family: "Times New Roman", serif;
+}
+
+nav ul li a {
+    background-color: #803463; /* Color de botón del CSS 1 */
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8em 1.5em; /* Relativo al tamaño de fuente del elemento li */
+    border-radius: 0.5rem; /* Border-radius del CSS 1 */
+    transition: background-color 0.3s ease;
+    font-size: 1em; /* Ya relativo a su padre li */
+    white-space: nowrap; /* Evita que los enlaces se rompan en múltiples líneas */
+    margin-bottom: 0.5rem; /* Espacio entre los botones en pantallas pequeñas */
+}
+
+nav ul li a:hover {
+    background-color: #5a2440; /* Hover del botón del CSS 1 */
+}
+
+/* Oculta el botón en escritorio */
+.menu-toggle {
+    display: none; /* Por defecto oculto en escritorio */
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem; /* Relativo al tamaño de fuente base */
+    color: #fff;
+    cursor: pointer;
+    margin-right: 1.25rem; /* Equivalente a 20px */
+}
+
+/* Estilos del contenido principal */
+main {
+    padding: 1.25rem; /* Mantener padding del CSS 1 */
+}
+
+.imagen-mapa { /* Del CSS 1 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.25rem; /* Equivalente a 20px */
+    flex-wrap: wrap;
+}
+
+.imagen-mapa img, /* Del CSS 1 */
+.imagen-mapa iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem; /* Equivalente a 8px */
+    padding-bottom: 0.9375rem; /* Equivalente a 15px */
+}
+
+section {
+    background-color: #fff; /* Fondo blanco para las secciones de contenido */
+    padding: 1.25rem; /* Padding del CSS 1 */
+    margin-bottom: 1.25rem; /* Margen del CSS 1 */
+    border-radius: 0.5rem; /* Border-radius del CSS 1 */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Box-shadow del CSS 1 */
+}
+
+.contenido-1 h2 {
+    color: #000080;
+    margin-top: 0;
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Escalado fluido entre 1.8rem y 2.5rem, usando 5vw como factor */
+    font-family: "Lucida Handwriting", cursive;
+    text-align: center;
+}
+section h3 {
+    color: #000080; /* Azul marino para los títulos de sección */
+    margin-top: 0;
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Del CSS 1, escalado fluido */
+    font-family: "Lucida Handwriting", cursive; /* Fuente Lucida Handwriting con una alternativa genérica */
+}
+
+section p { /* Cambiado de 'p' general para aplicar solo a párrafos de sección */
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Del CSS 1, escalado fluido */
+    font-family: "Times New Roman", serif;
+    text-align: justify;
+}
+
+/* Estilos específicos para la sección de inicio */
+#inicio {
+    text-align: center; /* Centra el contenido de la sección de inicio */
+    padding: 2.5rem 1.25rem; /* Padding del CSS 1 */
+}
+
+#inicio h2 { /* Selector más específico para el h2 de inicio */
+    color: #803463; /* Color del CSS 1 */
+}
+
+#inicio p {
+    font-size: 1.1em; /* Párrafos ligeramente más grandes */
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Estilos para la sección de noticias */
+#noticias h3 {
+    font-size: 1.75rem; /* Font-size del CSS 1 */
+    color: #333; /* Color del CSS 1 */
+    margin-bottom: 0.625rem; /* Margen del CSS 1 */
+    text-align: center; /* Centra el título de noticias */
+}
+
+#noticias ul {
+    list-style: none;
+    padding: 0;
+}
+
+#noticias ul li {
+    padding: 0.5rem 0; /* Padding del CSS 1 */
+    border-bottom: 1px solid #eee; /* Línea divisoria entre noticias */
+}
+
+#noticias ul li:last-child {
+    border-bottom: none; /* Elimina la línea inferior de la última noticia */
+}
+
+#noticias ul li a {
+    color: #007bff; /* Color azul para los enlaces de noticias */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: "Times New Roman", serif; /* Fuente del CSS 1 */
+}
+
+#noticias ul li a:hover {
+    color: #0056b3; /* Color más oscuro al pasar el ratón */
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+    /* font-family: "Lucida Handwriting", cursive;  Removido para usar el del CSS 1 */
+}
+
+.boton {
+    display: inline-block;
+    background-color: #803463; /* Color de botón del CSS 1 */
+    color: #fff; /* Color del CSS 1 */
+    padding: 0.8em 1.5em; /* Padding del CSS 1 */
+    text-decoration: none;
+    border-radius: 0.5rem; /* Border-radius del CSS 1 */
+    transition: background-color 0.3s ease;
+    font-size: 1rem; /* Font-size del CSS 1 */
+}
+
+.boton:hover {
+    background-color: #e2adce; /* Hover del botón del CSS 1 */
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #e2adce; /* Color del CSS 1 */
+    color: #000; /* Color del CSS 1 */
+    text-align: center;
+    padding: 1em 0; /* Padding del CSS 1 */
+    position: relative; /* Mantener si es necesario, pero el CSS 1 no lo tenía */
+    bottom: 0; /* Mantener si es necesario */
+    width: 100%; /* Mantener si es necesario */
+    font-size: 0.9em; /* Ligeramente más pequeño */
+}
+
+footer p {
+    font-size: 1rem; /* Font-size del CSS 1 */
+}
+
+/* Video portada (del CSS 1) */
+.video-portada {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 1.25rem; /* Equivalente a 20px */
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+.video-portada iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Elimina el borde predeterminado del iframe */
+}
+
+/* Estilos para las tarjetas de contenido (Card) */
+.card {
+    background-color: white;
+    border-radius: 10px; /* Mantener del CSS 2 */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Ocupa todo el ancho disponible en móvil */
+    max-width: none; /* Eliminamos max-width fijo para mobile-first */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card .card-content {
+    padding: 15px;
+    text-align: justify; /* Mantenemos justificado, pero centramos h3 */
+}
+
+.card h3 {
+    color: #000080;
+    margin-top: 0;
+    font-size: 1.6em;
+    text-align: center; /* Centrado */
+}
+
+/* Estilos para la disposición en columnas (Columna) */
+.columna {
+    display: grid;
+    /* En móvil, una columna por defecto */
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0 20px; /* Padding para que no se pegue a los bordes en móvil */
+}
+
+/* Aplica al texto que debe mostrarse recortado al principio */
+.contenido-corto {
+  overflow: hidden;              /* Oculta el contenido que se desborda del contenedor */
+  height: 100px;                  /* Altura visible inicial del texto */
+  transition: height 0.3s ease;  /* Suaviza el cambio de altura al expandir o contraer */
+}
+
+/* Se añade esta clase para mostrar todo el texto */
+.contenido-completo {
+  height: auto;                  /* Hace que el contenedor se expanda según el contenido */
+}
+
+/* Estilo para el botón "Ver más / Ver menos" */
+.ver-mas-btn {
+  color: blue;                   /* Color azul para simular un enlace */
+  cursor: pointer;              /* Cambia el cursor a una mano al pasar por encima */
+  display: inline-block;        /* Permite tratarlo como un bloque en línea */
+  margin-top: 5px;              /* Espacio entre el texto y el botón */
+  text-decoration: underline;   /* Subraya el texto como si fuera un link */
+}
+
+/* Estilos de las galerías de carreras y bachillerato */
+.galeria-carreras,
+.galeria-bachillerato {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan */
+    justify-content: center; /* Centra las imágenes */
+    width: 100%; /* Ocupa todo el ancho */
+    height: auto; /* Altura automática */
+    padding: 0; /* Eliminamos padding fijo */
+    position: static; /* Reiniciamos la posición */
+    left: auto; /* Eliminamos left fijo */
+    margin: 20px auto; /* Centra el contenedor y añade margen */
+}
+
+.galeria-carreras img,
+.galeria-bachillerato img {
+    width: 100%; /* Las imágenes ocupan el 100% del ancho en móvil */
+    max-width: 400px; /* Limita el tamaño en pantallas más grandes */
+    height: auto; /* Mantiene la proporción */
+    flex-grow: 1;
+    object-fit: cover;
+    filter: brightness(80%);
+    transition: .7s ease;
+    margin: 5px; /* Espacio entre imágenes */
+}
+
+.galeria-carreras img:hover,
+.galeria-bachillerato img:hover {
+    transform: scale(1.05); /* Importante: Cambiado para evitar problemas de layout con width fijo */
+    opacity: 1;
+    filter: brightness(130%);
+}
+
+
+/* Estilo de la pantalla de carga (Loader) */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Animación: tres puntos saltando */
+.dots-loader {
+    display: flex;
+    gap: 0.5rem; /* Equivalente a 8px, del CSS 1 */
+}
+
+.dots-loader span {
+    width: 0.75rem; /* Equivalente a 12px, del CSS 1 */
+    height: 0.75rem; /* Equivalente a 12px, del CSS 1 */
+    background: #3498db;
+    border-radius: 50%;
+    animation: bounce 1.2s infinite alternate;
+}
+
+.dots-loader span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.dots-loader span:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+/* Animación del loader (se mantiene la del CSS 1) */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* --- Media Queries --- */
+
+/* Para pantallas más pequeñas que 992px (ej. laptops pequeñas, tablets en horizontal) */
+@media (max-width: 992px) {
+    header .logo img {
+        max-width: 150px; /* Un poco más pequeño el logo */
+    }
+
+    nav ul li {
+        margin: 0 0.5rem; /* Reduce el margen entre ítems de navegación */
+    }
+
+    nav ul li a {
+        padding: 0.6em 1em; /* Reduce un poco el padding de los botones */
+    }
+
+    .galeria, .galeria-2, .galeria-video, .galeria1-video {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta las columnas de la galería */
+    }
+}
+
+/* Para pantallas más pequeñas que 768px (tablets en vertical, móviles grandes) */
+@media (max-width: 768px) {
+     header {
+        flex-direction: column; /* Apila el logo y la navegación verticalmente */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+        padding: 1rem;
+    }
+
+    header .logo {
+        width: 100%; /* El logo ocupa todo el ancho */
+        justify-content: space-between; /* Alinea el logo y el botón de menú */
+        margin-left: 0;
+        padding-bottom: 0.5rem;
+    }
+
+    header .logo img {
+        max-width: 150px; /* Un poco más pequeña en móviles */
+        margin-right: 0.5rem;
+    }
+
+    header .logo h1 {
+        font-size: 1.5rem; /* Más pequeño en móviles */
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el botón de menú hamburguesa */
+        position: absolute; /* Posiciona el botón en la esquina */
+        top: 1rem;
+        right: 1.25rem;
+        z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    }
+
+    nav {
+        display: none; /* Oculta la navegación por defecto */
+        width: 100%; /* La navegación ocupa todo el ancho */
+        background-color: #722e5a; /* Color de fondo para el menú desplegable */
+        padding: 1rem 0;
+        text-align: center;
+        border-radius: 0 0 8px 8px; /* Bordes redondeados en la parte inferior */
+    }
+
+    nav.active { /* Clase para mostrar/ocultar con JavaScript */
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column; /* Apila los ítems de navegación verticalmente */
+        align-items: center; /* Centra los ítems */
+        gap: 10px; /* Espacio entre los ítems apilados */
+    }
+
+    nav ul li {
+        width: 90%; /* Los ítems ocupan casi todo el ancho disponible */
+        margin: 0; /* Elimina márgenes laterales */
+    }
+
+    nav ul li a {
+        display: block; /* Hace que el enlace ocupe todo el ancho del li */
+        padding: 0.8em; /* Ajusta padding para botones apilados */
+        background-color: #803463; /* Color de fondo del botón */
+        border-radius: 5px;
+    }
+
+    main {
+        padding: 1rem; /* Reduce el padding del contenido principal */
+    }
+
+    section {
+        padding: 1rem; /* Reduce el padding de las secciones */
+    }
+
+    .galeria, .galeria-2, .galeria-video, .galeria1-video {
+        grid-template-columns: 1fr; /* Una sola columna para todas las galerías en móvil */
+        gap: 10px;
+    }
+
+    .galeria img, .galeria-2 img {
+        height: 200px; /* Ajusta la altura de las imágenes de galería en móvil */
+    }
+
+    .video-responsive {
+        padding-bottom: 75%; /* Ajusta la relación de aspecto para ser un poco más "cuadrada" en móviles (4:3) o mantén 56.25% (16:9) si prefieres */
+        /* Puedes experimentar con este valor, 56.25% (16:9) es el más común. */
+    }
+}
+
+/* Para pantallas muy pequeñas (móviles antiguos, o resoluciones bajas) */
+@media (max-width: 480px) {
+    body {
+        font-size: 90%; /* Ajusta ligeramente el tamaño de fuente base */
+    }
+
+    header .logo img {
+        max-width: 120px;
+    }
+
+    header .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    section h2, section h3 {
+        font-size: clamp(1.5rem, 4.5vw, 2rem);
+    }
+
+    section p {
+        font-size: clamp(0.9rem, 2.8vw, 1.1rem);
+    }
+
+    footer {
+        padding: 1em 0.5rem;
+        font-size: 0.8em;
+    }
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Animación: tres puntos saltando */
+.dots-loader {
+    display: flex;
+    gap: 0.5rem; /* Equivalente a 8px, del CSS 1 */
+}
+
+.dots-loader span {
+    width: 0.75rem; /* Equivalente a 12px, del CSS 1 */
+    height: 0.75rem; /* Equivalente a 12px, del CSS 1 */
+    background: #3498db;
+    border-radius: 50%;
+    animation: bounce 1.2s infinite alternate;
+}
+
+.dots-loader span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.dots-loader span:nth-child(3) {
+    animation-delay: 0.8s;
+}
